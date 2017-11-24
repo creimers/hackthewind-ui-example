@@ -1,0 +1,118 @@
+html, body {
+  margin: 0;
+  font-family: 'Roboto Mono', monospace;
+  color: grey;
+}
+.thebackground-outer {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.thebackground-inner {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('bg.jpg');
+  background-size: cover;
+  transform: scale(1.1);
+  animation-name: blurrr;
+  animation-duration: 1.5s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+
+.theapp {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.login {
+  width: 33vmin;
+  height: 33vmin;
+  background-color: rgba(211, 211, 211, 0);
+  animation-name: login-fade;
+  animation-duration: .75s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+}
+
+.login header {
+  padding: 10px 15px;
+  color: white;
+  background-color: dimgray;
+}
+
+.login main {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.login main .input-wrapper {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.login main input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ababab;
+  outline: none;
+  font-size: 16px;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.login footer {
+  padding: 15px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.login footer button {
+  color: white;
+  background: #007bff;
+  border: 0;
+  padding: 10px 15px;
+  font-family: 'Roboto Mono', monospace;
+  cursor: pointer;
+}
+
+.login footer button:hover {
+  background-color: #0069d9;
+}
+
+@keyframes blurrr {
+  from {
+    filter: blur(0px);
+  }
+  to {
+    filter: blur(20px);
+  }
+}
+
+@keyframes login-fade {
+  from {
+    background-color: rgba(211, 211, 211, 0);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  to {
+    background-color: rgba(211, 211, 211, 0.5);
+    opacity: 1;
+    visibility: visible;
+  }
+}
